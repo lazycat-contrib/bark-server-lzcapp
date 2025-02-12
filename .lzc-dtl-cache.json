@@ -1,0 +1,35 @@
+{
+  "name": "Bark",
+  "package": "cloud.lazycat.app.bark",
+  "description": "一款注重隐私、安全可控的自定义通知推送工具。",
+  "homepage": "https://bark.day.app",
+  "author": "Finb",
+  "app_features": [
+    "background_task"
+  ],
+  "subdomain": "bark",
+  "version": "2.2.0",
+  "iconPath": "bark.png",
+  "composePath": "docker-compose.yaml",
+  "unsupported_platforms": [
+    "ios",
+    "android"
+  ],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "bark-server_8080_8080": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_finab_bark-server": {
+    "originalImage": "finab/bark-server",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/finab/bark-server:f3090499df24e944",
+    "timestamp": "2025-02-12T04:49:23.473Z"
+  },
+  "bark-server_volume_/data_action": "emptyDir",
+  "bark-server_volume_/data_location": "app_data"
+}

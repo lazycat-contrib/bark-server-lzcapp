@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bark Server- 使用教程</title>
+    <style>
+        /* Reset and Basic Styling */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro SC", "SF Pro Text", "Helvetica Neue", "PingFang SC", "Segoe UI", Roboto, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header__domain {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom:10px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #222;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .section h3 {
+            font-size: 1.4em;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .section p {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .section ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin-bottom: 5px;
+        }
+        .section a {
+            color: #0077cc; /* 链接颜色 */
+            text-decoration: none; /* 去除下划线 */
+            transition: color 0.3s ease; /* 平滑的颜色过渡效果 */
+        }
+        .section a:hover{
+             text-decoration: underline;
+             color: #0056b3;
+        }
+
+        /* Code Block */
+        .code-block {
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-family: "SF Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+            font-size: 0.9em;
+            overflow-x: auto; /* 水平滚动条 */
+            margin-bottom: 15px;
+            white-space: pre-wrap;       /* 自动换行 */
+        }
+
+        /* Tips */
+        .tips {
+            background-color: #f0f4c3; /* Light yellow */
+            border: 1px solid #e6db74;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+             <div class="header__domain" id="domain"></div>
+            <h1>Bark 使用教程</h1>
+            <p>简单、可靠的消息推送服务</p>
+        </div>
+
+        <div class="section">
+            <h2>第一步：安装 Bark App</h2>
+            <p>在 App Store 中搜索 "Bark" 或点击以下链接安装：</p>
+            <p><a href="https://apps.apple.com/us/app/bark-customed-notifications/id1403753865" target="_blank">App Store 链接</a></p>
+            <p><b>App 是开源的吗？</b></p>
+            <p>是的，App 的源码可以在 <a href="https://github.com/Finb/Bark" target="_blank">GitHub</a> 上找到。</p>
+        </div>
+        <div class="section">
+            <h2>注意</h2>
+              <div class="tips">
+               请将App中的请求地址换成您自己的Bark App请求地址
+           </div>
+       </div>
+        <div class="section">
+            <h2>第二步：发送推送</h2>
+            <p>安装完成后，打开 App，App 会自动生成一个链接，类似下面这样：</p>
+            <div class="code-block">https://api.day.app/YourKey/YourTitle/YourContent</div>
+            <p>直接访问这个链接，您的设备就能收到推送。 您可以自定义推送内容：</p>
+             <ul>
+                <li><b>YourKey:</b>  您设备的唯一标识</li>
+                <li><b>YourTitle:</b> 推送的标题</li>
+                <li><b>YourContent:</b> 推送的内容</li>
+            </ul>
+             <h3>进阶用法：</h3>
+             <p>您还可以在链接中添加更多参数，实现更多功能，比如：</p>
+               <div class="code-block">https://api.day.app/YourKey/消息标题/消息内容?icon=https://day.app/assets/images/avatar.jpg</div>
+               <p>支持的参数有：</p>
+              <ul>
+                <li><b>title:</b>  推送标题</li>
+                <li><b>body:</b> 推送主体内容</li>
+                <li><b>badge:</b> App 上的角标数字</li>
+                <li><b>sound:</b> 推送声音（请在 App 中查看支持的声音名称）</li>
+                 <li><b>icon:</b> 推送图标 url</li>
+                <li><b>group:</b> 推送分组</li>
+                <li><b>url:</b>  点击推送跳转的 URL</li>
+            </ul>
+        </div>
+        <div class="section">
+             <h2>安全</h2>
+               <div class="tips">
+                请保管好您的推送链接，不要泄露给他人。
+            </div>
+        </div>
+
+        <div class="footer">
+            &copy; 2023 Bark
+        </div>
+    </div>
+     <script>
+        // 获取并显示当前域名
+        document.getElementById('domain').textContent = "您的Bark App域名：" + window.location.hostname+"/api";
+    </script>
+</body>
+</html>
