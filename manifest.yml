@@ -24,8 +24,10 @@ application:
 services:
     bark-server:
         container_name: bark-server
-        # finab/bark-server:v2.2.5
-        image: registry.lazycat.cloud/czyt/finab/bark-server:8ab883da21e7594d
+        # czyt/bark-server:v2.2.5
+        image: registry.lazycat.cloud/czyt/czyt/bark-server:a8d8d69eff56529a
+        environment:
+            - HELP_URL=/help
         binds:
             - /lzcapp/var/data:/data
 unsupported_platforms:
