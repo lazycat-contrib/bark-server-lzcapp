@@ -1,31 +1,33 @@
-lzc-sdk-version: "0.1"
 name: Bark Server
 package: cloud.lazycat.app.bark-server
-version: 2.2.0
+version: 2.2.5
+min_os_version: 1.3.8
 description: 一款注重隐私、安全可控的自定义通知推送工具。
 homepage: https://bark.day.app
 author: Finb
 application:
-  subdomain: bark-server
-  background_task: true
-  multi_instance: false
-  gpu_accel: false
-  kvm_accel: false
-  usb_accel: false
-  handlers:
-    error_page_templates:
-      404: /lzcapp/pkg/content/errors/404.html.tpl
-  public_path:
-    - /
-  routes:
-    - /=http://bark-server:8080/
-    - /help=file:///lzcapp/pkg/content/tours.html
+    subdomain: bark-server
+    background_task: true
+    handlers:
+        error_page_templates:
+            404: /lzcapp/pkg/content/errors/404.html.tpl
+    public_path:
+        - /
+
+    upstreams:
+        - location: /
+          backend: http://bark-server:8080/
+
+        - location: /help
+          backend: file:///lzcapp/pkg/content/tours.html
+
 services:
-  bark-server:
-    container_name: bark-server
-    image: registry.lazycat.cloud/czyt/finab/bark-server:f3090499df24e944
-    binds:
-      - /lzcapp/var/data:/data
+    bark-server:
+        container_name: bark-server
+        # finab/bark-server:v2.2.5
+        image: registry.lazycat.cloud/czyt/finab/bark-server:8ab883da21e7594d
+        binds:
+            - /lzcapp/var/data:/data
 unsupported_platforms:
-  - ios
-  - android
+    - ios
+    - android
