@@ -1,6 +1,6 @@
 name: Bark Server
 package: cloud.lazycat.app.bark-server
-version: 2.2.5
+version: 2.2.6
 min_os_version: 1.3.8
 description: 一款注重隐私、安全可控的自定义通知推送工具。
 homepage: https://bark.day.app
@@ -24,8 +24,8 @@ application:
 services:
     bark-server:
         container_name: bark-server
-        # czyt/bark-server:v2.2.5
-        image: registry.lazycat.cloud/czyt/czyt/bark-server:a8d8d69eff56529a
+        # czyt/bark-server:v2.2.6
+        image: registry.lazycat.cloud/czyt/czyt/bark-server:7bedcc5dc2053716
         environment:
             - HELP_URL=/help
         binds:
