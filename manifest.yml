@@ -33,3 +33,14 @@ services:
 unsupported_platforms:
     - ios
     - android
+
+locales:
+    zh:
+        name: "Bark Server"
+        description: "一款注重隐私、安全可控的自定义通知推送工具。"
+    zh_CN:
+        name: "Bark Server"
+        description: "一款注重隐私、安全可控的自定义通知推送工具。"
+    en:
+        name: "Bark Server"
+        description: "Backend of Bark which is an iOS App which allows you to push custom notifications to your iPhone"
