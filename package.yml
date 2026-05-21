@@ -1,0 +1,28 @@
+package: cloud.lazycat.app.bark-server
+version: 2.3.5
+name: Bark Server
+min_os_version: 1.5.0
+description: 一款注重隐私、安全可控的自定义通知推送工具。
+homepage: https://bark.day.app
+author: Finb
+
+unsupported_platforms:
+  - ios
+  - android
+
+locales:
+  zh:
+    name: "Bark Server"
+    description: "一款注重隐私、安全可控的自定义通知推送工具。"
+    entries.help.title: "使用帮助"
+    entries.main.title: "Bark Server"
+  zh_CN:
+    name: "Bark Server"
+    description: "一款注重隐私、安全可控的自定义通知推送工具。"
+    entries.help.title: "使用帮助"
+    entries.main.title: "Bark Server"
+  en:
+    name: "Bark Server"
+    description: "Backend of Bark which is an iOS App which allows you to push custom notifications to your iPhone"
+    entries.help.title: "Help"
+    entries.main.title: "Bark Server"

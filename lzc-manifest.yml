@@ -1,0 +1,29 @@
+application:
+  subdomain: bark-server
+  background_task: true
+  entries:
+    - id: help
+      title: "使用帮助"
+      path: /help
+    - id: main
+      title: "Bark Server"
+      path: /
+
+  public_path:
+    - /help
+
+  upstreams:
+    - location: /
+      backend: http://bark-server:8080/
+
+    - location: /help
+      backend: file:///lzcapp/pkg/content/tours.html
+
+services:
+  bark-server:
+    # ghcr.io/finb/bark-server:v2.3.5
+    image: registry.lazycat.cloud/czyt/finb/bark-server:b403b21abb2bc421
+    environment:
+      - HELP_URL=/help
+    binds:
+      - /lzcapp/var/data:/data
