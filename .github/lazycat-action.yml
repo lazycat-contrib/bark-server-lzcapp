@@ -1,0 +1,32 @@
+version: 1
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-output/bark-server.lpk
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: bark-server
+build:
+  run_buildscript: false
+images:
+  - id: bark-server
+    target: service
+    service: bark-server
+    source: ghcr.io/finb/bark-server
+    channel: stable
+    tag_regex: '^v?[0-9]+\.[0-9]+\.[0-9]+$'
+    delivery:
+      mode: lazycat
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Bark Server
+    summary: 注重隐私、安全可控的自定义通知推送服务
