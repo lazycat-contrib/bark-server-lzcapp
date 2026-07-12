@@ -38,4 +38,3 @@ services:
       - HELP_URL=/help
     binds:
       - /lzcapp/var/data:/data
-usage: "请打开应用的“使用帮助”入口，或通过应用域名的 /help 路径查看 Bark Server 使用说明。"

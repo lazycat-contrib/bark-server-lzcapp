@@ -18,6 +18,7 @@ Upgrade the packaged Bark Server help page so every push example uses the curren
 - Preserve placeholders such as `YourKey`, title, and content while encoding example path segments safely.
 - Display the active origin near the page title so users can verify which Bark Server instance they are configuring.
 - Provide copy buttons whose copied text is exactly the currently displayed instance-specific example.
+- Select Simplified Chinese for `zh*` browser locales and English for all other locales; localize headings, instructions, parameter descriptions, example path text, and copy feedback.
 
 ## Visual direction
 
