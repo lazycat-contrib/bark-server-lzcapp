@@ -30,8 +30,8 @@ application:
 services:
   bark-server:
     # ghcr.io/finb/bark-server:v2.3.5
-    # upstream: ghcr.io/finb/bark-server:v2.3.5
-    image: registry.lazycat.cloud/czyt/finb/bark-server:b403b21abb2bc421
+    # upstream: ghcr.io/finb/bark-server:v2.3.6
+    image: registry.lazycat.cloud/czyt/finb/bark-server:c0b3ddf32c513d9c
     entrypoint: /bin/sh
     command: /lzcapp/pkg/content/startup.sh
     environment:
