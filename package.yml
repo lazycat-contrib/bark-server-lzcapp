@@ -1,5 +1,5 @@
 package: cloud.lazycat.app.bark-server
-version: 2.3.9
+version: 2.4.0
 name: Bark Server
 min_os_version: 1.5.0
 description: 一款注重隐私、安全可控的自定义通知推送工具。
